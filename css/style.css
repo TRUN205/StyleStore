@@ -156,3 +156,79 @@ body::after{ bottom: -12vmax; right: -10vmax;
 a {
   text-decoration: none;
 }
+
+/* ===== Chips — GenZ polished ===== */
+.chip-group{
+  display:flex; gap: 12px; flex-wrap: wrap;
+}
+
+.chip{
+  --h: 38px;
+  --pad-x: 16px;
+  --bg: #F2F4F8;
+  --bd: #E6E8EE;
+  --txt: #111827;
+
+  display:inline-flex; align-items:center; justify-content:center;
+  height: var(--h); padding: 0 var(--pad-x);
+  border-radius: 999px;
+  background:
+    linear-gradient(180deg, rgba(255,255,255,.8), rgba(255,255,255,.65)),
+    var(--bg);
+  border: 1px solid var(--bd);
+  color: var(--txt);
+  font-weight: 700;
+  letter-spacing: .2px;
+  box-shadow:
+    0 1px 0 rgba(255,255,255,.8) inset,
+    0 8px 18px rgba(16,24,40,.06);
+  transform: translateZ(0);
+  transition: box-shadow .15s ease, transform .06s ease, background .2s ease, color .2s ease, border-color .2s ease;
+  cursor: pointer;
+  text-decoration: none; /* cho <a> */
+}
+
+.chip:hover{
+  box-shadow:
+    0 1px 0 rgba(255,255,255,.9) inset,
+    0 12px 26px rgba(16,24,40,.1);
+  transform: translateY(-1px);
+  background:
+    linear-gradient(180deg, rgba(255,255,255,.92), rgba(255,255,255,.75)),
+    #fff;
+  border-color: #DCE1EA;
+}
+
+.chip:active{
+  transform: translateY(1px);
+  box-shadow:
+    0 0 0 rgba(0,0,0,0),
+    0 6px 14px rgba(16,24,40,.08);
+}
+
+/* Active = đậm hơn, nền tối nhẹ & chữ trắng */
+.chip.active{
+  --bg: #111217;
+  --bd: #0b0c10;
+  --txt: #fff;
+
+  background: linear-gradient(180deg, #17181f, #101216);
+  color: var(--txt);
+  border-color: var(--bd);
+  box-shadow:
+    0 1px 0 rgba(255,255,255,.08) inset,
+    0 16px 30px rgba(0,0,0,.18);
+}
+
+/* Focus ring đẹp khi dùng phím tab */
+.chip:focus-visible{
+  outline: none;
+  box-shadow:
+    0 0 0 3px rgba(37, 99, 235, .15),
+    0 10px 24px rgba(16,24,40,.12);
+}
+
+/* Kích thước phụ nếu cần */
+.chip.sm{ --h: 32px; --pad-x: 12px; }
+.chip.lg{ --h: 44px; --pad-x: 20px; }
+

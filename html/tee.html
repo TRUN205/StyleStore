@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>StyleStore — Áo thun</title>
+  <link rel="stylesheet" href="../css/style.css"/>
+  <style>
+    .page-wrapper {
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+    .page-wrapper main {
+      flex-grow: 1;
+    }
+  </style>
+</head>
+<body class="page-wrapper" data-cat="tee">
+  <header class="navbar">
+    <div class="nav-inner container">
+      <a class="brand" href="index.html">StyleStore</a>
+      <nav class="menu">
+        <a href="index.html" class="nav-link">Tất cả</a>
+        <a href="tee.html" class="nav-link active">Áo thun</a>
+        <a href="polo.html" class="nav-link">Polo</a>
+        <a href="shirt.html" class="nav-link">Sơ mi</a>
+      </nav>
+      <form class="search" onsubmit="return false;">
+        <input type="search" placeholder="Tìm áo..." aria-label="Tìm kiếm"/>
+      </form>
+      <a class="btn btn-ghost btn-sm logout" href="login.html">Đăng xuất</a>
+    </div>
+  </header>
+
+  <main class="container" style="padding-block:32px">
+    <h1>Áo thun</h1>
+    <section class="categories">
+      <a class="chip" href="index.html">Tất cả</a>
+      <a class="chip active" href="tee.html">Áo thun</a>
+      <a class="chip" href="polo.html">Polo</a>
+      <a class="chip" href="shirt.html">Sơ mi</a>
+    </section>
+
+    <section class="listing" id="grid"></section>
+  </main>
+
+  <footer class="footer">
+    <div class="container foot-inner">
+      <p>© <span id="year"></span> StyleStore</p>
+      <nav class="foot-menu">
+        <a href="#">Chính sách</a>
+        <a href="#">Liên hệ</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script src="../js/catalog.js"></script>
+</body>
+</html>
