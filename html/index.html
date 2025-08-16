@@ -4,34 +4,48 @@
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <title>StyleStore — Trang chủ</title>
-  <link rel="stylesheet" href="/css/style.css"/>
+  <link rel="stylesheet" href="../css/style.css"/>
+  <style>
+    .page-wrapper {
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+    .page-wrapper main {
+      flex-grow: 1;
+    }
+  </style>
 </head>
-<body>
+<body class="page-wrapper">
   <header class="navbar">
     <div class="nav-inner container">
-      <a class="brand" href="/">StyleStore</a>
+      <a class="brand" href="index.html">StyleStore</a>
       <nav class="menu">
         <a href="#" class="nav-link active">Trang chủ</a>
         <a href="#" class="nav-link">Áo thun</a>
         <a href="#" class="nav-link">Polo</a>
         <a href="#" class="nav-link">Sơ mi</a>
       </nav>
+
       <form class="search" onsubmit="return false;">
         <input type="search" placeholder="Tìm áo..." aria-label="Tìm kiếm"/>
       </form>
+
+      <a class="btn btn-ghost btn-sm logout" href="login.html" title="Đăng xuất">Đăng xuất</a>
     </div>
   </header>
 
   <main>
     <section class="hero container">
       <div class="hero-text">
-        <h1>Áo tối giản, <span>đậm chất</span></h1>
-        <p>Tông trắng chủ đạo, nút đen nổi bật. Thiết kế tối giản, hiện đại.</p>
+        <h1>minimalism</h1>
+        <p>Form tối giản, sắc nét, dễ mix & match. Núi việc? Cứ basic mà “đỉnh”.</p>
         <div class="hero-actions">
           <a href="#" class="btn btn-black">Mua ngay</a>
           <a href="#" class="btn btn-ghost">Sản phẩm mới</a>
         </div>
       </div>
+
       <div class="hero-card glass">
         <h3>Deal tuần này</h3>
         <p>Giảm đến 20% cho dòng Classic.</p>
@@ -39,28 +53,14 @@
       </div>
     </section>
 
-    <section class="categories container">
-      <button class="chip active">Tất cả</button>
-      <button class="chip">Áo thun</button>
-      <button class="chip">Polo</button>
-      <button class="chip">Sơ mi</button>
-      <button class="chip">Oversize</button>
+    <section class="categories container" id="filters">
+      <button class="chip active" data-cat="all">Tất cả</button>
+      <button class="chip" data-cat="tee">Áo thun</button>
+      <button class="chip" data-cat="polo">Polo</button>
+      <button class="chip" data-cat="shirt">Sơ mi</button>
     </section>
 
-    <section class="listing container" id="grid">
-      <!-- Sản phẩm sẽ render bằng JS -->
-    </section>
-
-    <section class="cta container">
-      <div class="cta-box glass">
-        <h3>Đăng ký nhận tin</h3>
-        <p>Nhận ưu đãi & sản phẩm mới hàng tuần.</p>
-        <form class="cta-form" onsubmit="return false;">
-          <input type="email" placeholder="Email của bạn">
-          <button class="btn btn-black">Đăng ký</button>
-        </form>
-      </div>
-    </section>
+    <section class="listing container" id="grid"></section>
   </main>
 
   <footer class="footer">
@@ -72,7 +72,5 @@
       </nav>
     </div>
   </footer>
-
-  <script src="/js/main.js"></script>
 </body>
 </html>
